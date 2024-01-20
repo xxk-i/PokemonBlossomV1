@@ -5,7 +5,6 @@ var speed = 5
 
 var initial_position = Vector2(0,0)
 var input_direction = Vector2(0,0)
-var is_moving = false
 var percent_to_tile = 0.0
 
 var gender = 'F'
@@ -31,17 +30,20 @@ func _ready():
 		$AnimatedSprite2D.animation = "Female"
 
 func _physics_process(delta):
-	if player_state == PlayerState.TURNING:
-		return
-	elif !is_moving:
-		process_priority_input()
-	elif input_direction != Vector2.ZERO:
-		anim_state.travel("Walk")
-		move(delta)
-	else:
-		anim_state.travel("Idle")
-		is_moving = false
-
+	match player_state:
+		PlayerState.TURNING:
+			return
+		PlayerState.IDLE:
+			process_priority_input()
+		PlayerState.WALKING:
+			if input_direction != Vector2.ZERO:
+				anim_state.travel("Walk")
+				move(delta)
+				
+			else:
+				anim_state.travel("Idle")
+				player_state = PlayerState.IDLE
+	
 	move_and_slide()
 
 func process_priority_input():
@@ -59,9 +61,11 @@ func process_priority_input():
 			player_state = PlayerState.TURNING
 			anim_state.travel("Turn")
 		else:
+			player_state = PlayerState.WALKING
 			initial_position = position
-			is_moving = true
+			
 	else:
+		player_state = PlayerState.IDLE
 		anim_state.travel("Idle")
 
 func need_to_turn():
@@ -89,6 +93,6 @@ func move(delta):
 	if percent_to_tile >= 1.0:
 		position = initial_position + (TILE_SIZE * input_direction)
 		percent_to_tile = 0.0
-		is_moving = false
+		player_state = PlayerState.IDLE
 	else:
 		position = initial_position + (TILE_SIZE * input_direction * percent_to_tile)
