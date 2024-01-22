@@ -17,6 +17,7 @@ var facing_direction = FacingDirection.DOWN
 
 @onready var anim_tree = $AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
+@onready var ray = $RayCast2D
 
 func _ready():
 	position = position.snapped(Vector2.ONE * TILE_SIZE)
@@ -89,10 +90,18 @@ func finished_turning():
 	player_state = PlayerState.IDLE
 
 func move(delta):
-	percent_to_tile += speed * delta
-	if percent_to_tile >= 1.0:
-		position = initial_position + (TILE_SIZE * input_direction)
+	
+	var desired_step: Vector2 = input_direction * TILE_SIZE/2
+	ray.target_position = desired_step
+	ray.force_raycast_update()
+	if !ray.is_colliding():
+		percent_to_tile += speed * delta
+		if percent_to_tile >= 1.0:
+			position = initial_position + (TILE_SIZE * input_direction)
+			percent_to_tile = 0.0
+			player_state = PlayerState.IDLE
+		else:
+			position = initial_position + (TILE_SIZE * input_direction * percent_to_tile)
+	else:
 		percent_to_tile = 0.0
 		player_state = PlayerState.IDLE
-	else:
-		position = initial_position + (TILE_SIZE * input_direction * percent_to_tile)
