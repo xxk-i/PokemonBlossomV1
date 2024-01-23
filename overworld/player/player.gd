@@ -7,7 +7,7 @@ var initial_position = Vector2(0,0)
 var input_direction = Vector2(0,0)
 var percent_to_tile = 0.0
 
-var gender = 'F'
+var gender = 'M'
 
 enum PlayerState { IDLE, TURNING, WALKING }
 enum FacingDirection { LEFT, RIGHT, UP, DOWN }
