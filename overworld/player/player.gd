@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-var speed = 5
+# Time it takes to walk to next tile
+var speed = 0.35
 
 var initial_position = Vector2(0,0)
 var input_direction = Vector2(0,0)
@@ -68,6 +69,8 @@ func _process(delta):
 
 		# If we are currently idle but have an input direction, do the move!
 		if player_state == PlayerState.IDLE:
+			# NOTE: this is probably where collision checking should go
+			# e.g. canWalkToTile(position_to_tile(position.x/y +/- TILE_SIZE))
 			anim_state.travel("Walk")
 			move()
 
@@ -115,6 +118,6 @@ func finished_turning():
 func move():
 	player_state = PlayerState.WALKING
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", position + (TILE_SIZE * input_direction), 0.35)
+	tween.tween_property(self, "position", position + (TILE_SIZE * input_direction), speed)
 	await tween.finished
 	player_state = PlayerState.IDLE 
