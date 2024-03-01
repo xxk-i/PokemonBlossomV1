@@ -250,11 +250,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_snfbj"]
-resource_name = "JumpDown"
-length = 0.8
-loop_mode = 1
-step = 0.2
+[sub_resource type="Animation" id="Animation_v0eon"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -262,118 +259,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [1, 0, 2, 0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6),
-"transitions": PackedFloat32Array(2.92817, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Shadow:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6),
-"transitions": PackedFloat32Array(2.92817, 7.51433e-05, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_1mml4"]
-resource_name = "JumpLeft"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [10, 9, 11, 9]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6),
-"transitions": PackedFloat32Array(2.92817, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Shadow:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6),
-"transitions": PackedFloat32Array(2.92817, 4.16881e-05, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_hlrxk"]
-resource_name = "JumpRight"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [7, 6, 8, 6]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6),
-"transitions": PackedFloat32Array(2.92817, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Shadow:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.6),
-"transitions": PackedFloat32Array(2.92817, 0.000488282, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
+"values": [3]
 }
 
 [sub_resource type="Animation" id="Animation_cmggh"]
@@ -572,15 +461,98 @@ tracks/0/keys = {
 "values": [4, 3, 5, 3]
 }
 
+[sub_resource type="Animation" id="Animation_hlrxk"]
+resource_name = "JumpRight"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 6, 8, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(2.92817, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(2.92817, 0.000488282, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1mml4"]
+resource_name = "JumpLeft"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 9, 11, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(2.92817, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(2.92817, 4.16881e-05, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxtt6"]
 _data = {
 "IdleDown": SubResource("Animation_1bgmb"),
 "IdleLeft": SubResource("Animation_52lv0"),
 "IdleRight": SubResource("Animation_osu01"),
 "IdleUp": SubResource("Animation_xtddx"),
-"JumpDown": SubResource("Animation_snfbj"),
 "JumpLeft": SubResource("Animation_1mml4"),
 "JumpRight": SubResource("Animation_hlrxk"),
+"RESET": SubResource("Animation_v0eon"),
 "TurnDown": SubResource("Animation_cmggh"),
 "TurnLeft": SubResource("Animation_6lyfy"),
 "TurnRight": SubResource("Animation_2d8oj"),
@@ -620,21 +592,21 @@ animation = &"TurnLeft"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_noksf"]
 animation = &"JumpRight"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_140os"]
-animation = &"JumpDown"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uocd1"]
+animation = &"IdleDown"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ovon"]
-animation = &"JumpDown"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_140os"]
+animation = &"IdleUp"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_6rb44"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_863d1")
 blend_point_0/pos = Vector2(-1, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_noksf")
 blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_140os")
-blend_point_2/pos = Vector2(0, -1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_7ovon")
-blend_point_3/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_uocd1")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_140os")
+blend_point_3/pos = Vector2(0, -1)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8kros"]
 animation = &"TurnDown"
@@ -687,26 +659,28 @@ states/End/position = Vector2(1083, 63)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_njpv5")
 states/Idle/position = Vector2(495, 63)
 states/Jump/node = SubResource("AnimationNodeBlendSpace2D_6rb44")
-states/Jump/position = Vector2(609, 135)
+states/Jump/position = Vector2(608, 135)
 states/Start/position = Vector2(298, 63)
 states/Turn/node = SubResource("AnimationNodeBlendSpace2D_w3u6q")
 states/Turn/position = Vector2(870, 64)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_4npml")
 states/Walk/position = Vector2(675, 63)
 
-[node name="Player" type="CharacterBody2D"]
-position = Vector2(8, 8)
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(32, 4)
 script = ExtResource("1_870aq")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
 texture = ExtResource("4_1o1vq")
+offset = Vector2(32, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_ieyci")
 animation = &"Female"
-frame = 1
+frame = 3
+offset = Vector2(32, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -726,4 +700,5 @@ parameters/Turn/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(32, 0)
 zoom = Vector2(3, 3)

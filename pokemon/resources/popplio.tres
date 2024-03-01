@@ -1,0 +1,37 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://c50ev36fge6vn"]
+
+[ext_resource type="AudioStream" uid="uid://depc1g2qqmcx0" path="res://audio/pokemon cries/popplio_cry.ogg" id="1_b407s"]
+[ext_resource type="Script" path="res://pokemon/pokemon_base.gd" id="1_t6bxb"]
+[ext_resource type="Texture2D" uid="uid://cbkaeghndmlba" path="res://assets/pokemon sprites/popplio/back.png" id="2_74ib0"]
+[ext_resource type="Texture2D" uid="uid://dx0eyr6mpoude" path="res://assets/pokemon sprites/popplio/back_shiny.png" id="3_7xvuv"]
+[ext_resource type="Texture2D" uid="uid://8q46nm40m84v" path="res://assets/pokemon sprites/popplio/front.png" id="4_5ldfy"]
+[ext_resource type="Texture2D" uid="uid://ceopnkp5mx467" path="res://assets/pokemon sprites/popplio/front_shiny.png" id="5_a1d6t"]
+[ext_resource type="Texture2D" uid="uid://cmwrq3hlnprg7" path="res://assets/pokemon sprites/popplio/icon.png" id="6_s5yk0"]
+
+[resource]
+script = ExtResource("1_t6bxb")
+species_name = "Popplio"
+dex_id = "007"
+type1 = "Water"
+type2 = ""
+abilities = []
+hp = 50
+attack = 54
+defense = 54
+sp_attack = 66
+sp_defense = 56
+speed = 40
+weight = 7.5
+gender_ratio_female = 12.5
+base_xp_yield = 64
+capture_rate = 45
+growth_rate = "Medium Slow"
+lvl_one_moves = []
+lvl_learnset = {}
+tm_learnset = []
+sprite_front = ExtResource("4_5ldfy")
+sprite_back = ExtResource("2_74ib0")
+sprite_front_shiny = ExtResource("5_a1d6t")
+sprite_back_shiny = ExtResource("3_7xvuv")
+sprite_icons = ExtResource("6_s5yk0")
+cry = ExtResource("1_b407s")

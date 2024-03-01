@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmtwaq0fd45nu"]
+
+[ext_resource type="Texture2D" uid="uid://d2ynxhmdaeeen" path="res://assets/doors/AptDoor.png" id="1_04fxg"]
+[ext_resource type="Script" path="res://overworld/doors/door.gd" id="2_e5yr6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo7y4"]
+atlas = ExtResource("1_04fxg")
+region = Rect2(0, 0, 20, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cagex"]
+atlas = ExtResource("1_04fxg")
+region = Rect2(20, 0, 20, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsqt3"]
+atlas = ExtResource("1_04fxg")
+region = Rect2(40, 0, 20, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3ioo"]
+atlas = ExtResource("1_04fxg")
+region = Rect2(60, 0, 20, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_05lc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo7y4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cagex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsqt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3ioo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DoorApt" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_05lc6")
+centered = false
+offset = Vector2(-10, -22)
+script = ExtResource("2_e5yr6")

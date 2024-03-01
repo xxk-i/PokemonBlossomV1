@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbtsag6s8ss2x"]
+
+[ext_resource type="Script" path="res://pokemon/poke_inst.gd" id="1_5lgh0"]
+
+[node name="poke_inst" type="Node"]
+script = ExtResource("1_5lgh0")
