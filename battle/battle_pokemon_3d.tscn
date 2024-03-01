@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://hkq1e2pjpp7m"]
+
+[ext_resource type="Material" uid="uid://bi8niewvd35ni" path="res://battle/m_3d_battle_pokemon.tres" id="1_me83s"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_rqmn5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x41ww"]
+height = 0.001
+
+[node name="BattlePokemon3D" type="Node3D"]
+
+[node name="Pokemon" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_rqmn5")
+surface_material_override/0 = ExtResource("1_me83s")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.363524, 0)
+mesh = SubResource("CylinderMesh_x41ww")

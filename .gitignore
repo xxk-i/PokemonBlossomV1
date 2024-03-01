@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
-assets/sprites/pokemon\ sprites/9tails/
+assets/pokemon\ sprites/9tails/
+*.DS_Store

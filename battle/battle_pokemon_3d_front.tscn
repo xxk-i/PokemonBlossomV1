@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://e3vg4f6krr6m"]
+
+[ext_resource type="PackedScene" uid="uid://hkq1e2pjpp7m" path="res://battle/battle_pokemon_3d.tscn" id="1_fud8o"]
+
+[node name="BattlePokemon3D" instance=ExtResource("1_fud8o")]

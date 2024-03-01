@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwj3qaayw46vi"]
+
+[ext_resource type="PackedScene" uid="uid://hkq1e2pjpp7m" path="res://battle/battle_pokemon_3d.tscn" id="1_u1kgw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yblpp"]
+sky_top_color = Color(0.247059, 0.423529, 0.823529, 1)
+sky_horizon_color = Color(0.494118, 0.67451, 0.858824, 1)
+
+[sub_resource type="Sky" id="Sky_kr4e3"]
+sky_material = SubResource("ProceduralSkyMaterial_yblpp")
+
+[sub_resource type="Environment" id="Environment_85gm1"]
+background_mode = 2
+sky = SubResource("Sky_kr4e3")
+
+[node name="Battle3D" type="Node3D"]
+
+[node name="PlayerPokemon" parent="." instance=ExtResource("1_u1kgw")]
+transform = Transform3D(2.57, 0, 0, 0, 2.57, 0, 0, 0, 2.57, 0.527302, 0.510024, -1.65804)
+
+[node name="Battle" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerMons" type="VBoxContainer" parent="Battle"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -63.0
+offset_right = 99.0
+offset_bottom = -13.0
+grow_vertical = 2
+scale = Vector2(1, 1.00784)
+
+[node name="Pokemon1" type="Label" parent="Battle/PlayerMons"]
+layout_mode = 2
+text = "POKEMON_1"
+
+[node name="Pokemon2" type="Label" parent="Battle/PlayerMons"]
+layout_mode = 2
+text = "POKEMON_2"
+
+[node name="Moves" type="VBoxContainer" parent="Battle"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -288.0
+offset_right = -3.0
+offset_bottom = -187.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="Battle/Moves"]
+layout_mode = 2
+text = "MOVE_1
+MOVE_2
+MOVE_3
+MOVE_4
+"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54119, 0.955409, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_85gm1")
+
+[node name="EnemyPokemon" parent="." instance=ExtResource("1_u1kgw")]
+transform = Transform3D(2.57, 0, 0, 0, 2.57, 0, 0, 0, 2.57, 3.25719, 0.939604, -4.48129)
