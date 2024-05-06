@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtw24jvy0fucj"]
+
+[ext_resource type="Script" path="res://ui/grid_cursor.gd" id="1_6xsim"]
+[ext_resource type="Script" path="res://battle/ui_menus/move_list.gd" id="1_hfv3d"]
+[ext_resource type="Texture2D" uid="uid://5nyqei7trxfy" path="res://ui/cursor_hand.png" id="2_b4wc2"]
+[ext_resource type="Theme" uid="uid://cstldepeg74o" path="res://battle/BattleMovesTheme.tres" id="3_x8mgr"]
+[ext_resource type="AudioStream" uid="uid://da3nub8vvkirl" path="res://ui/select.wav" id="4_budst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_noxtf"]
+bg_color = Color(0.827451, 0.709804, 0.223529, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.967347, 0.896884, 0.620426, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.576471, 0.505882, 0.203922, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw64j"]
+bg_color = Color(0.368627, 0.733333, 0.313726, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.529412, 0.890196, 0.47451, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.262745, 0.513726, 0.223529, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[node name="MoveList" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hfv3d")
+
+[node name="GridCursor" type="GridContainer" parent="." node_paths=PackedStringArray("cursor")]
+custom_minimum_size = Vector2(150, 0)
+layout_direction = 2
+layout_mode = 0
+offset_right = 74.0
+offset_bottom = 77.0
+script = ExtResource("1_6xsim")
+cursor = NodePath("../TextureRect")
+cursor_offset = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="GridCursor"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_x8mgr")
+
+[node name="BattlePanel" type="Panel" parent="GridCursor/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_x8mgr")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridCursor/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="BattleLabel" type="Label" parent="GridCursor/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_x8mgr")
+theme_override_font_sizes/font_size = 16
+text = "Battle"
+
+[node name="MarginContainer2" type="MarginContainer" parent="GridCursor"]
+layout_mode = 2
+theme = ExtResource("3_x8mgr")
+
+[node name="BagPanel" type="Panel" parent="GridCursor/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("3_x8mgr")
+theme_override_styles/panel = SubResource("StyleBoxFlat_noxtf")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridCursor/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="BagLabel" type="Label" parent="GridCursor/MarginContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_x8mgr")
+theme_override_font_sizes/font_size = 16
+text = "Bag"
+
+[node name="MarginContainer3" type="MarginContainer" parent="GridCursor"]
+layout_mode = 2
+theme = ExtResource("3_x8mgr")
+
+[node name="PokemonPanel" type="Panel" parent="GridCursor/MarginContainer3"]
+layout_mode = 2
+theme = ExtResource("3_x8mgr")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tw64j")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridCursor/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="PokemonLabel" type="Label" parent="GridCursor/MarginContainer3/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_x8mgr")
+theme_override_font_sizes/font_size = 16
+text = "Pokemon"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 32.0
+texture = ExtResource("2_b4wc2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="UISFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_budst")
+volume_db = -5.778
+
+[connection signal="selection_changed" from="GridCursor" to="." method="_on_grid_cursor_selection_changed"]
+[connection signal="selection_confirmed" from="GridCursor" to="." method="_on_grid_cursor_selection_confirmed"]

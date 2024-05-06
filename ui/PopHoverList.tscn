@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://brvuf0nyjh26e"]
+
+[sub_resource type="Theme" id="Theme_ym3th"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp7mi"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.533333, 0, 0, 1)
+
+[node name="PopHoverList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 107.0
+offset_right = 293.0
+offset_bottom = 147.0
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "plrearsjrd"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "plrearsj21dadadada"
+horizontal_alignment = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ym3th")
+theme_override_styles/panel = SubResource("StyleBoxFlat_yp7mi")

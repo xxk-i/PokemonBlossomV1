@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="Pokemon Blossom V1"
-run/main_scene="res://overworld/scene_manager.tscn"
+run/main_scene="res://battle/battle.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://test_files/icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/vsync/vsync_mode=0
 
 [input]
 

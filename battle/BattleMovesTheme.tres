@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cstldepeg74o"]
+
+[ext_resource type="StyleBox" uid="uid://do6uw57pwbhsf" path="res://battle/BattleStyleBox.tres" id="1_yhcuo"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 16
+Panel/styles/panel = ExtResource("1_yhcuo")
