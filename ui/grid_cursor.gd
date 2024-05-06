@@ -29,7 +29,9 @@ var selected := 0:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	# Selected is already 0, but by doing set again we run
+	# the UI setup code
+	selected = 0
 
 func _input(event):
 	if isConfirmed:
